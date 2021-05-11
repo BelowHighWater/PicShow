@@ -1,7 +1,7 @@
 <style>
 h1 {
 	text-align:center; 
-	font-size: 10vh;
+	font-size: 9vh;
 	font-style: italic;
   	text-shadow: 0px 5px 10px black;
 	font-family:californian fb;
@@ -10,8 +10,9 @@ h1 {
   	justify-content: center;
   	position: fixed;
  	top: 40%;
-  	left: 0%;
-  	transform: translate(0%, -50%);
+  	left: 15%;
+	right:15%;
+  	transform: translate(0%, -20%);
   	border: 0px solid green;
 }
 h2 {
@@ -34,8 +35,8 @@ h2 {
   justify-content: center;
   position: fixed;
   top: 50%;
-  left: 0%;
-  transform: translate(0%, -50%);
+  left: 25%;
+  transform: translate(-0%, -50%);
   border: 0px solid green;
 }
 </style>
@@ -91,7 +92,7 @@ newPic();
 }
 
 function newPic() {
-var randomPic = Math.floor((Math.random()*9)+1);
+var randomPic = Math.floor((Math.random()*11)+1);
 var picDisplay = "pics/"+randomPic+".jpg";
 console.log(picDisplay);
 document.getElementById('picDisplay').src = "pics/"+randomPic+".jpg" ;
