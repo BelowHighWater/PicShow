@@ -81,8 +81,27 @@ img{
 
 <script>
 
+//window.addEventListener("resize", MiniMe(), false)
+
+document.addEventListener("visibilitychange", function() {
+    if (document.hidden){
+        console.log("Browser tab is hidden");
+		location.reload();
+		MiniMe;
+    } else {
+        console.log("Browser tab is visible");
+		location.reload();
+		MiniMe;
+    }
+});
+
+function MiniMe() {
+	console.log("Resized");
+	//location.reload()
+	};
 
 function newPic() {
+	console.log("FishPond")
 	var oldPic = 0;	
 		var randomPic = Math.floor((Math.random()*5)+1);
 			if (randomPic == oldPic){
@@ -115,7 +134,6 @@ function newPic() {
 		op += op * 0.1;
 		}, 40);
 		oldPic = randomPic;
-		console.log(randomPic);
 	};
 
 
