@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<style>
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    }
+
+.center {
+  display: flex;
+  justify-content: top;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  transform: translate(-0%, 0%);
+  border: 0px solid green;
+}
+
+
+
+</style>
+
+<body>
+<body onload="newPic()">
+<img id="picDisplay" width=100% height=100% alt="some image">
+
+
+
+</div>
+
+
+<script>
+
+//window.addEventListener("resize", MiniMe(), false)
+
+document.addEventListener("visibilitychange", function() {
+    if (document.hidden){
+        console.log("Browser tab is hidden");
+		location.reload();
+		MiniMe;
+    } else {
+        console.log("Browser tab is visible");
+		location.reload();
+		MiniMe;
+    }
+});
+
+function MiniMe() {
+	console.log("Resized");
+	//location.reload()
+	};
+
+function newPic() {
+	console.log("FishPond")
+	var oldPic = 0;	
+		var randomPic = Math.floor((Math.random()*9)+1);
+			if (randomPic == oldPic){
+				randomPic = Math.floor((Math.random()*9)+1);
+			};
+		document.getElementById('picDisplay').src = "mSlide"+randomPic+".JPG" ;
+		var op = 0.1;  // initial opacity
+		picDisplay.style.display = 'block';
+		var timer = setInterval(function () {
+			if (op >= 1){
+				clearInterval(timer);
+				Dpslay = setInterval(function () {
+					op = 1;  // initial opacity
+					timer = setInterval(function () {
+						if (op <= 0.1){
+							clearInterval(timer);
+							picDisplay.style.display = 'none';
+							clearInterval(Dpslay);
+							newPic();
+							
+						}
+						picDisplay.style.opacity = op;
+						picDisplay.style.filter = 'alpha(opacity=' + op * 100 + ")";
+						op -= op * 0.1;
+					}, 40);
+				}, 8000);
+			};
+		picDisplay.style.opacity = op;
+		picDisplay.style.filter = 'alpha(opacity=' + op * 100 + ")";
+		op += op * 0.1;
+		}, 40);
+		oldPic = randomPic;
+	};
+
+
+</script>
+</body>
+</html>
